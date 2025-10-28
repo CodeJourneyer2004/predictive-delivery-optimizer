@@ -1,8 +1,12 @@
-import streamlit as st, joblib, pandas as pd
+import streamlit as st
+import joblib
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Load model + features
-model = joblib.load('best_delay_model.joblib')
-feature_cols = joblib.load('feature_cols.joblib')
+# Load version-safe models
+model = joblib.load('best_delay_model_v2.joblib')
+feature_cols = joblib.load('feature_cols_v2.joblib')
 
 st.title("📦 Predictive Delivery Optimizer")
 st.write("Estimate delay probability for a given shipment.")
